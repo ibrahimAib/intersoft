@@ -2,7 +2,7 @@ function url() {
     var num;
     num = document.getElementById('phone').value;
 
-    var num1 = '00966' + num;
+    var num1 = '+966' + num;
 
 
     var deviceNumber = document.getElementById('device').value;
