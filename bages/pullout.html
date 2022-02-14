@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+
+<div w3-include-html="/sors.html"></div>
+
+<body class="text-center d-flex justify-content-center mt-5 pt-5">
+
+    <main class="form-signin" style="background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 28%, rgba(148,187,233,0) 100%);">
+
+        <img class="mb-4" src="/image/whatsapp.png" alt="انقر ودردش" width="57" height="57">
+
+        <h5 class="h3 mb-3 fw-normal" style="color: rgb(105, 105, 105);">Pull Out</h5>
+
+        <div class="border mt-1 p-2">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="phone" placeholder="Password" value="533301365">
+                <label style="color: darkgray;">رقم الجوال</label>
+            </div>
+        </div>
+
+        <div class="border mt-1 p-2">
+            <!-- <h5 class="h3 m-3 fw-normal" style="color: darkgray;">رقم الجهاز</h5> -->
+            <div class="form-floating mt-1">
+                <input type="text" class="form-control" id="device" value="8156548">
+                <label style="color: darkgray;">رقم الجهاز</label>
+            </div>
+        </div>
+
+
+        <button class="w-100 btn btn-lg btn-warning mt-3" onclick="url()" type="submit" id="myBtn">إرسال</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        <a class="mt-5 mb-3 text-muted" href="/index.html">الرئيسية</a>
+
+    </main>
+
+    <script src="/js/pullout.js"></script>
+    <script>
+        w3IncludeHTML('/sors.html');
+    </script>
+
+
+</body>
+
+</html>
