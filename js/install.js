@@ -79,8 +79,8 @@ function url() {
         // -----------------------------------------------------
 
     }
-    var message_ar = "السلام عليكم%0aمعك إبراهيم مندوب " + bank_ar + "%0a%0aبخصوص تركيب جهاز الشبكة 'مدى'%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "%0aHello,%0aThis is Ibrahim, an employee of " + bank_en + "%0a%0aAbout Installation the 'Mada' device%0aSubmit your location and working hours%0a%0aThank you.";
+    var message_ar = "السلام عليكم%0aمعك إبراهيم مندوب " + bank_ar + "%0a%0aبخصوص تركيب جهاز نقطة البيع 'مدى'%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
+    var message_en = "%0aHello,%0aThis is Ibrahim, an employee of " + bank_en + "%0a%0aAbout Installation of the point of sale device 'Mada' device%0aSend your location and working hours%0a%0aThank you.";
     var spliter = "%0a--------------------------------"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
 
