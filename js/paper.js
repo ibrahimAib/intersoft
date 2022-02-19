@@ -73,14 +73,14 @@ function url() {
         // -----------------------------------------------------
         case '8174':
         case '8173':
-            var bank_en = 'Banque Saudi Fransi';
+            var bank_en = 'Foodics';
             var bank_ar = 'فودكس';
             break;
         // -----------------------------------------------------
 
     }
-    var message_ar = "السلام عليكم%0aمعك إبراهيم مندوب  " + bank_ar + "%0a%0aبخصوص توصيل أوراق جهاز نقطة البيع 'مدى'%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "Hello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout the delivery of the paper of the point of sale device ‘mada’%0aSend your location and working hours%0a%0aThank you.";
+    var message_ar = "السلام عليكم%0aمعك إبراهيم من  " + bank_ar + "%0a%0aبخصوص توصيل أوراق جهاز نقطة البيع 'مدى'%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
+    var message_en = "Hello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout the delivery of the paper of the payment device ‘mada’%0aSend your location and working hours%0a%0aThank you.";
     var spliter = "%0a--------------------------------%0a"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
 
