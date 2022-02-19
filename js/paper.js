@@ -79,8 +79,8 @@ function url() {
         // -----------------------------------------------------
 
     }
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من  " + bank_ar + "%0a%0aبخصوص توصيل أوراق جهاز نقطة البيع 'مدى'%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "Hello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout the delivery of the paper of the payment device ‘mada’%0aSend your location and working hours%0a%0aThank you.";
+    var message_ar = "السلام عليكم%0aمعك إبراهيم من  " + bank_ar + "%0a%0aبخصوص توصيل أوراق جهاز الدفع 'مدى',%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
+    var message_en = "Hello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout delivery of the payment device Mada's paper,%0aSend your location and working hours%0a%0aThank you.";
     var spliter = "%0a--------------------------------%0a"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
 
