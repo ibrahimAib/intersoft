@@ -46,7 +46,7 @@ function bancode(e) {
         // -----------------------------------------------------
         case '8123':
             var bank_en = 'Arab Bank';
-            var bank_ar = 'بنك العربي';
+            var bank_ar = 'البنك العربي';
             break;
         // -----------------------------------------------------
         case '8124':
@@ -56,15 +56,15 @@ function bancode(e) {
         // -----------------------------------------------------
         case '8196':
             var bank_en = 'Saudi National Bank';
-            var bank_ar = 'بنك الأهلي';
+            var bank_ar = 'البنك الأهلي';
             break;
         case '8166':
             var bank_en = 'Saudi National Bank';
-            var bank_ar = 'بنك الأهلي';
+            var bank_ar = 'البنك الأهلي';
             break;
         case '8116':
             var bank_en = 'Saudi National Bank';
-            var bank_ar = 'بنك الأهلي';
+            var bank_ar = 'البنك الأهلي';
             break;
         // -----------------------------------------------------
         case '8127':
@@ -102,7 +102,7 @@ function url() {
     var bank_en = bancode(bankcode)[1];
     console.log(bank_ar)
 
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص تركيب جهاز الدفع 'مدى',%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
+    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص تركيب جهاز نقاط البيع 'مدى',%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
     var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout payment device 'mada' installation,%0aSend your location and working hours%0a%0aThank you.";
     var spliter = "%0a--------------------------------"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
@@ -118,7 +118,7 @@ function peper() {
     var bank_en = bancode(bankcode)[1];
     console.log(bank_ar)
 
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من  " + bank_ar + "%0a%0aبخصوص توصيل أوراق جهاز الدفع 'مدى',%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
+    var message_ar = "السلام عليكم%0aمعك إبراهيم من  " + bank_ar + "%0a%0aبخصوص توصيل أوراق جهاز نقاط البيع,%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
     var message_en = "Hello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout delivery of the payment device Mada's paper,%0aSend your location and working hours%0a%0aThank you.";
     var spliter = "%0a--------------------------------%0a"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
@@ -132,7 +132,7 @@ function maintenance() {
     var bank_en = bancode(bankcode)[1];
     console.log(bank_ar)
 
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص صيانة جهاز الدفع 'مدى',%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
+    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص صيانة جهاز نقاط البيع,%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
     var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout payment device 'mada' maintenance,%0aSend your location and working hours%0a%0aThank you.";
     var spliter = "%0a--------------------------------"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
