@@ -194,7 +194,7 @@ function neuleep() {
     var bank_en = bancode(bankcode)[1];
     console.log(bank_ar)
 
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص تركيب جهاز نقاط البيع 'مدى',%ممكن ترسل الموقع وصورة من السجل التجاري واوقات العمل%0a%0aوشكراً";
+    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص تركيب جهاز نقاط البيع 'مدى',%0aممكن ترسل الموقع وصورة من السجل التجاري واوقات العمل%0a%0aوشكراً";
     var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout payment device 'mada' installation,%0aSend your location and working hours%0a%0aThank you.";
     var spliter = "%0a--------------------------------"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
