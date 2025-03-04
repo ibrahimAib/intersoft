@@ -96,7 +96,12 @@ function peper() {
 };
 
 function installation() {
-    base('بخصوص تركيب جهاز نقاط البيع ""مدى""', 'Regarding the installation of the POS device,', 'ممكن ترسل الموقع وصورة من السجل التجاري واوقات العمل ','can you send the location , Customer CR and work hours.')
+    
+    if(document.getElementById('bank').value == 1){
+        base('بخصوص تركيب جهاز نقاط البيع ""مدى""', 'Regarding the installation of the POS device,', 'ممكن ترسل الموقع وصورة من السجل التجاري واوقات العمل ','can you send the location , Customer CR and work hours.')
+    }else{
+        base('بخصوص تركيب جهاز نقاط البيع ""مدى""', 'Regarding the installation of the POS device,')
+    }
 };
 
 
