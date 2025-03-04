@@ -1,201 +1,110 @@
-var device = document.getElementById('device');
-device.addEventListener('input', validatedevice);
-function validatedevice() {
 
-    if (device.value.slice(0, 1) != 8) {
-        alert("the device number must be starting with 81")
-        device.value = '';
-    } else if (device.value.slice(0, 1) == 8) {
+var tech_Name_ar = localStorage.getItem('techNameAr');
+var tech_Name_en = localStorage.getItem('techNameEn');
 
-        if (device.value.charAt(1) != '') {
-            if (device.value.charAt(1) != 1) {
-                alert("the device number must be starting with 81 from secando")
-                device.value = 8;
-            }
-        };
+document.getElementById('techNameAr').value = tech_Name_ar;
+document.getElementById('techNameEn').value = tech_Name_en;
+function techName(){
+    localStorage.setItem("techNameAr", document.getElementById('techNameAr').value);
+    localStorage.setItem("techNameEn", document.getElementById('techNameEn').value);
 
-    };
 }
-
-
+let bank_en = 'Neoleap';
+let bank_ar = 'نيوليب';
 function bancode(e) {
     switch (e) {
         default:
-            alert('device number is wrong')
+            alert('اختر البنك')
             error();
             break;
-        case '8125':
-        case '8115':
-
-        case '8150':
-        case '8151':
-        case '8152':
-        case '8153':
-        case '8154':
-        case '8155':
-        case '8156':
-        case '8157':
-        case '8158':
-        case '8159':
-
-        case '8165':
-        case '8100':
-            var bank_en = 'Al Rajhi Bank';
-            var bank_ar = 'بنك الراجحي';
+        case '1':
+            var bank_en = 'Neoleap';
+            var bank_ar = 'نيوليب';
             break;
         // -----------------------------------------------------
-        case '8123':
+        case '2':
+            var bank_en = 'Saudi National Bank';
+            var bank_ar = 'لبنك الأهلي';
+            break;
+        // -----------------------------------------------------
+        case '3':
+            var bank_en = 'foodics';
+            var bank_ar = 'فودكس';
+        break;
+        // -----------------------------------------------------
+        case '4':
             var bank_en = 'Arab Bank';
-            var bank_ar = 'البنك العربي';
+            var bank_ar = 'لبنك العربي';
             break;
         // -----------------------------------------------------
-        case '8124':
+        case '5':
             var bank_en = 'Riyad Bank';
             var bank_ar = 'بنك الرياض';
             break;
-        // -----------------------------------------------------
-        case '8196':
-            var bank_en = 'Saudi National Bank';
-            var bank_ar = 'البنك الأهلي';
-            break;
-        case '8166':
-            var bank_en = 'Saudi National Bank';
-            var bank_ar = 'البنك الأهلي';
-            break;
-        case '8116':
-            var bank_en = 'Saudi National Bank';
-            var bank_ar = 'البنك الأهلي';
-            break;
-        // -----------------------------------------------------
-        case '8127':
+            // -----------------------------------------------------
+        case '6':
             var bank_en = 'Banque Saudi Fransi';
-            var bank_ar = 'البنك السعودي الفرنسي';
+            var bank_ar = 'لبنك السعودي الفرنسي';
             break;
         // -----------------------------------------------------
-        case '8128':
+        case '7':
             var bank_en = 'Samba Bank';
             var bank_ar = 'بنك سامبا';
             break;
         // -----------------------------------------------------
-        case '8129':
+        case '8':
             var bank_en = 'SABB Bank';
             var bank_ar = 'بنك ساب';
-            break;
-        // -----------------------------------------------------
-        case '8174':
-        case '8173':
-            var bank_en = 'foodics';
-            var bank_ar = 'فودكس';
             break;
         // -----------------------------------------------------
 
     }
     return [bank_ar, bank_en];
 }
-function url() {
-    var num1 = '+966' + document.getElementById('phone').value;
-    var bankcode = document.getElementById('device').value.slice(0, 4);
 
-    var bankcode = document.getElementById('device').value.slice(0, 4);
+function base(ticket_ar, ticket_en, line1_ar = 'ارسل الموقع واوقات العمل', line1_en = 'Could you please send the location and working hours?') {
+    techName()
+    var num1 = '+966' + document.getElementById('phone').value;
+    var bankcode = document.getElementById('bank').value;
+    let tech_Name_value_ar = document.getElementById('techNameAr').value;
+    let tech_Name_value_en = document.getElementById('techNameEn').value;
 
     var bank_ar = bancode(bankcode)[0];
     var bank_en = bancode(bankcode)[1];
-    console.log(bank_ar)
 
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص تركيب جهاز نقاط البيع 'مدى',%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout payment device 'mada' installation,%0aSend your location and working hours%0a%0aThank you.";
-    var spliter = "%0a--------------------------------"
+    let great_ar = "السلام عليكم ورحمة الله وبركاتة";
+    let interduce1_ar = "معك ";
+    let interduce2_ar = " من انترسوفت الدعم الفني ل";
+    let thank_ar = 'شكراً لك..';
+    let newline = '%0a';
+    
+    let great_en = "Hello";
+    let interduce1_en = "This is ";
+    let interduce2_en = " from Intersoft, %0atechnical support for ";
+    let thank_en = 'Thank you.';
+
+    let message_ar = great_ar + newline + newline + interduce1_ar + tech_Name_value_ar + interduce2_ar + bank_ar + newline + newline + ticket_ar + newline + line1_ar + newline + newline + thank_ar;
+    let message_en = great_en + newline + newline + interduce1_en + tech_Name_value_en + interduce2_en + bank_en + newline + newline + ticket_en + newline + line1_en + newline + newline + thank_en;
+
+
+    var spliter = "%0a--------------------------------%0a%0a"
     window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
 };
 
 function peper() {
-    var num1 = '+966' + document.getElementById('phone').value;
-    var bankcode = document.getElementById('device').value.slice(0, 4);
-
-    var bankcode = document.getElementById('device').value.slice(0, 4);
-
-    var bank_ar = bancode(bankcode)[0];
-    var bank_en = bancode(bankcode)[1];
-    console.log(bank_ar)
-
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص توصيل أوراق جهاز نقاط البيع،%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "Hello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout delivery of the payment device Mada's paper,%0aSend your location and working hours%0a%0aThank you.";
-    var spliter = "%0a--------------------------------%0a"
-    window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
+    base('بخصوص توصيل ورق نقاط البيع', 'Regarding the delivery of POS paper,')
 };
 
+function installation() {
+    base('بخصوص تركيب جهاز نقاط البيع ""مدى""', 'Regarding the installation of the POS device,', 'ممكن ترسل الموقع وصورة من السجل التجاري واوقات العمل ','can you send the location , Customer CR and work hours.')
+};
+
+
+
 function maintenance() {
-    var num1 = '+966' + document.getElementById('phone').value;
-    var bankcode = document.getElementById('device').value.slice(0, 4);
-
-    var bank_ar = bancode(bankcode)[0];
-    var bank_en = bancode(bankcode)[1];
-    console.log(bank_ar)
-
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص صيانة جهاز نقاط البيع,%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout payment device 'mada' maintenance,%0aSend your location and working hours%0a%0aThank you.";
-    var spliter = "%0a--------------------------------"
-    window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
+    base('بخصوص صيانة نقاط البيع', 'Regarding POS maintenance,')
 };
 
 function pullout() {
-    var num1 = '+966' + document.getElementById('phone').value;
-    var bankcode = document.getElementById('device').value.slice(0, 4);
-
-    var bank_ar = bancode(bankcode)[0];
-    var bank_en = bancode(bankcode)[1];
-    console.log(bank_ar)
-
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص إلغاء جهاز الدفع 'مدى',%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout cancellation the payment device 'Mada',%0aSend your location and working hours%0a%0aThank you.";
-    var spliter = "%0a--------------------------------"
-    window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
-};
-
-function replacement() {
-    var num1 = '+966' + document.getElementById('phone').value;
-    var bankcode = document.getElementById('device').value.slice(0, 4);
-
-    var bank_ar = bancode(bankcode)[0];
-    var bank_en = bancode(bankcode)[1];
-    console.log(bank_ar)
-
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص تحديث جهاز الدفع 'مدى' من بنك سامبا إلى بنك الأهلي,%0aارسل موقعك وأوقات الدوام%0a%0aوشكراً";
-    var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aRegarding the update of the payment device “Mada” from Samba Bank to Al-Ahly Bank,%0aSend your location and working hours%0a%0aThank you.";
-    var spliter = "%0a--------------------------------"
-    window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
-};
-
-var inputD = document.getElementById("device");
-var inputP = document.getElementById("phone");
-
-
-// Execute a function when the user releases a key on the keyboard
-inputD.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("myBtn").click();
-    }
-});
-inputP.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("myBtn").click();
-    }
-});
-
-function neuleep() {
-    var num1 = '+966' + document.getElementById('phone').value;
-    var bankcode = document.getElementById('device').value.slice(0, 4);
-
-    var bankcode = document.getElementById('device').value.slice(0, 4);
-
-    var bank_ar = bancode(bankcode)[0];
-    var bank_en = bancode(bankcode)[1];
-    console.log(bank_ar)
-
-    var message_ar = "السلام عليكم%0aمعك إبراهيم من " + bank_ar + "%0a%0aبخصوص تركيب جهاز نقاط البيع 'مدى',%0aممكن ترسل الموقع وصورة من السجل التجاري واوقات العمل%0a%0aوشكراً";
-    var message_en = "%0aHello,%0aThis is Ibrahim, from " + bank_en + "%0a%0aAbout payment device 'mada' installation,%0aSend your location and working hours%0a%0aThank you.";
-    var spliter = "%0a--------------------------------"
-    window.open("https://wa.me/" + num1 + "?text=" + message_ar + spliter + message_en);
+    base('بخصوص الغاء نقاط البيع', 'Regarding POS cancellation,')
 };
