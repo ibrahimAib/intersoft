@@ -62,7 +62,7 @@ function bancode(e) {
     return [bank_ar, bank_en];
 }
 
-function base(ticket_ar, ticket_en, line1_ar = 'ارسل الموقع واوقات العمل', line1_en = 'Could you please send the location and working hours?') {
+function base(ticket_ar, ticket_en, line1_ar = 'ارسل الموقع واوقات العمل', line1_en = 'Could you please send the location and working hours.') {
     techName()
     var num1 = '+966' + document.getElementById('phone').value;
     var bankcode = document.getElementById('bank').value;
@@ -92,7 +92,7 @@ function base(ticket_ar, ticket_en, line1_ar = 'ارسل الموقع واوقا
 };
 
 function peper() {
-    base('بخصوص توصيل ورق نقاط البيع', 'Regarding the delivery of POS paper,')
+    base('بخصوص توصيل ورق جهاز نقاط البيع', 'Regarding the delivery of POS paper,')
 };
 
 function installation() {
@@ -111,5 +111,5 @@ function maintenance() {
 };
 
 function pullout() {
-    base('بخصوص الغاء نقاط البيع', 'Regarding POS cancellation,')
+    base('بخصوص الغاء جهاز نقاط البيع', 'Regarding POS cancellation,')
 };
